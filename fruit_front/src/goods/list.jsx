@@ -2,9 +2,17 @@ import React, {useEffect, useState} from "react";
 import axios from "axios";
 
 function List(){
-    let [list,setList] = useState('테스트해봅시다');
+    let [list,setList] = useState([]);
 
     useEffect(() => {
+        axios.get('http://localhost:8080/goods/list')
+            .then(response =>{
+                setList(response.list);
+            })
+            .catch(error =>{
+                console.error('error :',error);
+            })
+
     }, []);
 
     return (
@@ -21,12 +29,14 @@ function List(){
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>{list}</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
+                    { list.map(goodsList => (
+                        <tr key={goodsList.no}>
+                            <td>{goodsList.no}</td>
+                            <td>{goodsList.item}</td>
+                            <td>{goodsList.qty}</td>
+                            <td>{goodsList.price}</td>
+                        </tr>
+                    ))}
                 </tbody>
             </table>
         </>
