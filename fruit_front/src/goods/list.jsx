@@ -1,5 +1,12 @@
+import React, {useEffect, useState} from "react";
+import axios from "axios";
 
 function List(){
+    let [list,setList] = useState('테스트해봅시다');
+
+    useEffect(() => {
+    }, []);
+
     return (
         <>
             <h2>List</h2>
@@ -15,7 +22,7 @@ function List(){
                 </thead>
                 <tbody>
                     <tr>
-                        <td></td>
+                        <td>{list}</td>
                         <td></td>
                         <td></td>
                         <td></td>
