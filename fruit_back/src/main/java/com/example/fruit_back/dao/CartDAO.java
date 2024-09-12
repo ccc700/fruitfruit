@@ -9,7 +9,7 @@ import java.util.List;
 @Repository
 public interface CartDAO extends JpaRepository<Cart, Integer> {
 
-    public List<Cart> findByMid(int mid);
+    public List<Cart> findByMember_id(String id);
 
-    public Cart findByMidAndGno(int uid, int gno);
+    public Cart findByMember_idAndGoods_no(String id, int gno);
 }

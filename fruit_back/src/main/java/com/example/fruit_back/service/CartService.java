@@ -14,14 +14,14 @@ public class CartService {
     private CartDAO cartDAO;
 
     // 특정 유저의 장바구니를 검색해서 반환한다
-    public List<Cart> findById(int id){
-        return cartDAO.findByMid(id);
+    public List<Cart> listCart(String id){
+        return cartDAO.findByMember_id(id);
     }
 
     // 유저의 장바구니에서 특정 제품의 정보를 반환한다
 
-    public Cart findByUidandGno(int uid, int gno){
-        return cartDAO.findByMidAndGno(uid,gno);
-    }
+//    public Cart findByUidandGno(String uid, int gno){
+//        return cartDAO.findByMember_idAndGoods_no(uid,gno);
+//    }
 
 }
