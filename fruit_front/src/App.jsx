@@ -20,7 +20,6 @@ function App() {
                   <Route path="/goods/admin/insert" element={<Insert/>}/>
                   <Route path="/goods/admin/update" element={<Update/>}/>
               </Routes>
-
           </Router>
       </>
 

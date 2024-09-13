@@ -13,6 +13,7 @@ import org.springframework.web.multipart.MultipartFile;
 )
 public class Goods {
     @Id
+    @SequenceGenerator(name="SEQ_GOODS_GEN", sequenceName =  "SEQ_GOODS_GEN", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_GOODS_GEN")
     private int no;
     private String item;
